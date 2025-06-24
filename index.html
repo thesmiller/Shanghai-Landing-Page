@@ -12,7 +12,15 @@
       padding: 0;
       box-sizing: border-box;
     }
+/* Tagline just above the email link */
+    .tagline {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #ffffff;      /* white text */
+  text-align: center;
+}
 
+    
     /* Full-screen background video */
     #bgVideo {
       position: fixed;
@@ -57,12 +65,12 @@
     <source src="background.mp4" type="video/mp4">
     Your browser doesn’t support HTML5 video.
   </video>
-<!-- Tagline -->
-<div class="tagline">
-  上海线上品牌首席域名，诚意出售。
-</div>
+
  <!-- Page content -->
   <div class="content">
+    <div class="tagline">上海线上品牌首席域名，诚意出售。
+
+</div>
     <!-- Visible text stays “Request Info”; email is added by JS -->
     <a id="mailto" class="email-link" href="#">Request Info</a>
   </div>
