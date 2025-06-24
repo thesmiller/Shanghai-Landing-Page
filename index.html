@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Landing Page</title>
+
+  <style>
+    /* Reset default margins */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Full-screen background video */
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;   /* fill screen, keep aspect ratio */
+      z-index: -1;         /* stay behind page content */
+    }
+
+    /* Page content wrapper */
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* push link to the bottom */
+      align-items: center;
+      height: 100vh;
+      padding: 2rem;
+      font-family: system-ui, sans-serif;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* legibility */
+    }
+
+    /* Email link */
+    a.email-link {
+      font-size: 1.25rem;
+      color: #ffffff;      /* force white */
+      text-decoration: none;
+    }
+    a.email-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background video -->
+  <video id="bgVideo" autoplay muted playsinline>
+    <!-- Main source; adjust path/filename as needed -->
+    <source src="background.mov" type="video/quicktime">
+    <!-- Fallback MP4 for wider browser support -->
+    <source src="background.mp4" type="video/mp4">
+    Your browser doesn’t support HTML5 video.
+  </video>
+
+  <!-- Page content -->
+  <div class="content">
+    <!-- Replace the address below -->
+    <a class="email-link" href="mailto:hello@example.com">hello@example.com</a>
+  </div>
+</body>
+</html>
