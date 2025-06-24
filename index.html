@@ -32,6 +32,16 @@
       z-index: -1;         /* stay behind page content */
     }
 
+    /* 👉  Portrait tweak goes right here */
+    @media (orientation: portrait) {
+      #bgVideo {
+        width: auto;          /* let height dominate */
+        height: 100vh;
+        min-width: 100vw;     /* avoid side bars */
+      }
+    }
+
+    
     /* Page content wrapper */
     .content {
       display: flex;
