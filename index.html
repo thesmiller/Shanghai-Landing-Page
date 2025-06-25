@@ -6,87 +6,71 @@
   <title>上海.com — 上海线上品牌首席域名，诚意出售</title>
 
   <style>
-    /* Reset default margins */
+    /* ---------- RESET ---------- */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-/* Tagline just above the email link */
-    .tagline {
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-  color: #ffffff;      /* white text */
-  text-align: center;
-}
 
-    
-    /* Full-screen background video */
+    /* ---------- TAGLINE ---------- */
+    .tagline {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    /* ---------- FULL-SCREEN VIDEO ---------- */
     #bgVideo {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;   /* fill screen, keep aspect ratio */
-      z-index: -1;         /* stay behind page content */
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      object-fit: cover;
+      z-index: -1;
     }
-    
-    /* Page content wrapper */
+
+    /* ---------- HAMBURGER BUTTON ---------- */
+    #hamburger{
+      position:fixed; top:1rem; left:1rem;
+      width:2rem; height:1.5rem;
+      display:flex; flex-direction:column; justify-content:space-between;
+      background:none; border:none; cursor:pointer; z-index:1000;
+    }
+    #hamburger span{
+      width:100%; height:3px; background:#fff;
+      transition:transform .3s ease, opacity .3s ease; border-radius:2px;
+    }
+    /* morph into “X” */
+    #hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+    #hamburger.open span:nth-child(2){opacity:0;}
+    #hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+    /* ---------- SLIDE-IN MENU ---------- */
+    nav#menu{
+      position:fixed; top:0; left:0; height:100vh; width:260px;
+      padding:5rem 1.5rem 2rem;
+      background:rgba(0,0,0,.85); backdrop-filter:blur(4px);
+      font-family:system-ui,sans-serif;
+      transform:translateX(-100%); transition:transform .3s ease; z-index:900;
+    }
+    nav#menu.open{transform:translateX(0);}
+    nav#menu ul{list-style:none;}
+    nav#menu li+li{margin-top:.8rem;}
+    nav#menu a{color:#fff; text-decoration:none; font-size:1.15rem; line-height:1.4;}
+    nav#menu a:hover{text-decoration:underline;}
+
+    /* ---------- PAGE CONTENT ---------- */
     .content {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end; /* push link to the bottom */
+      justify-content: flex-end;
       align-items: center;
       height: 100vh;
       padding: 2rem;
       font-family: system-ui, sans-serif;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* legibility */
+      text-shadow: 0 1px 4px rgba(0,0,0,.7);
     }
 
-    /* Email link */
-    a.email-link {
-      font-size: 1.25rem;
-      color: #ffffff;      /* force white */
-      text-decoration: none;
-    }
-    a.email-link:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Background video -->
-  <video id="bgVideo" autoplay muted playsinline>
-    <!-- Main source; adjust path/filename as needed -->
-    <source src="background.mov" type="video/quicktime">
-    <!-- Fallback MP4 for wider browser support -->
-    <source src="background.mp4" type="video/mp4">
-    Your browser doesn’t support HTML5 video.
-  </video>
-
- <!-- Page content -->
-  <div class="content">
-    <div class="tagline">上海线上品牌首席域名，诚意出售。
-
-</div>
-    <!-- Visible text stays “Request Info”; email is added by JS -->
-    <a id="mailto" class="email-link" href="#">联系我们 / Info</a>
-  </div>
-
-  <!-- Obfuscation script: assembles the email only after the page loads -->
-  <script>
-    (function () {
-      const user   = "dentonshadow";   // local part
-      const domain = "gmail.com";      // domain part
-      const link   = document.getElementById("mailto");
-
-      link.href = `mailto:${user}@${domain}`;
-      /* If you want the address to show instead of “Request Info,”
-         uncomment the next line: */
-      // link.textContent = `${user}@${domain}`;
-    })();
-  </script>
-</body>
-</html>
+    /* ---------- EMAIL LINK ---------- */
+    a.em
